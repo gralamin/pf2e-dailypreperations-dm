@@ -1,5 +1,5 @@
-from randtable import RandTable
 import encounter
+from randtable import RandTable
 
 
 class Region:

@@ -1,4 +1,5 @@
 import unittest
+
 import encounter
 
 BASE_LEVEL = 6

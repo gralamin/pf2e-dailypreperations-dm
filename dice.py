@@ -1,6 +1,7 @@
 import random
-from colors import bcolors
 from typing import Tuple
+
+from colors import bcolors
 
 
 def rollD20(roller=random.randint) -> int:

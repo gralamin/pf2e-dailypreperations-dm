@@ -1,6 +1,7 @@
-from enum import Enum
-import randtable
 import random
+from enum import Enum
+
+import randtable
 from dice import roll
 
 

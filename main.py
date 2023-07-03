@@ -1,13 +1,14 @@
+import argparse
+import random
+import sys
+from enum import Enum
+from typing import List
+
+import encounter
 import region
 import weather
-import random
-import encounter
-from enum import Enum
-import argparse
-import sys
 from colors import bcolors
 from dice import roll
-from typing import List
 
 
 class TerrainType(Enum):

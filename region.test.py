@@ -1,6 +1,7 @@
 import unittest
-import region
+
 import encounter
+import region
 
 
 class TestRegion(unittest.TestCase):
