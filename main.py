@@ -7,6 +7,7 @@ import argparse
 import sys
 from colors import bcolors
 from dice import roll
+from typing import List
 
 
 class TerrainType(Enum):
