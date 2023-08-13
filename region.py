@@ -43,6 +43,16 @@ BARRIAL.add_encounter(encounter.ENCOUNTER_MOD_4_ZEBUB, 2)
 BARRIAL.add_encounter(encounter.ENCOUNTER_MOD_4_ZRUKBAT, 2)
 BARRIAL.add_encounter(encounter.ENCOUNTER_SEV_4_FIEND, 1)
 
-REGION_LOOKUP = {3: FAIRMARK, 4: BARRIAL}
+STONEROAD = Region("Stoneroad Plains", 5)
+STONEROAD.add_previous_region_encounters(BARRIAL, 5)
+STONEROAD.add_encounter(encounter.ENCOUNTER_LOW_5_BANDIT, 3)
+STONEROAD.add_encounter(encounter.ENCOUNTER_LOW_5_HIERA, 3)
+STONEROAD.add_encounter(encounter.ENCOUNTER_MOD_5_HYDRA, 2)
+STONEROAD.add_encounter(encounter.ENCOUNTER_MOD_5_DRETCH, 2)
+STONEROAD.add_encounter(encounter.ENCOUNTER_MOD_5_MANTICORE, 2)
+STONEROAD.add_encounter(encounter.ENCOUNTER_MOD_5_BANDITS, 2)
+STONEROAD.add_encounter(encounter.ENCOUNTER_MOD_5_PERYTON, 1)
+
+REGION_LOOKUP = {3: FAIRMARK, 4: BARRIAL, 5: STONEROAD}
 
 REGION_CHOICES = REGION_LOOKUP.keys()
