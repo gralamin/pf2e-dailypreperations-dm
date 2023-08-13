@@ -4,6 +4,7 @@
 from enum import Enum
 from randtable import RandTable
 
+
 class Ancestry(Enum):
     ANDROID = "Android"
     AUTOMATON = "Automaton"
@@ -44,44 +45,44 @@ class Ancestry(Enum):
     @staticmethod
     def choose_random():
         """My setting demographics
-        
-Ancestry | Percentage | d100 roll
---- | :---: | :---:
-Android | < 0.1% | 00, d20=1
-Automation | < 0.1% | 00, d20=2
-Azarketi | 2% | 01-02
-Catfolk | 5% | 03-07
-Conrasu | <0.1% | 00, d20=3
-Dwarf | 20% | 08-27
-Elf | 10% | 28-37
-Fetchling | 2% | 38-39
-Fleshwarp | 0.3% | 00, d20=4-7
-Ghorian | 0.5% | 00, d20=8-14
-Gnoll | 3.5% | 40-43
-Gnome | 2.5% | 44-45
-Goblin | 1.5% | 46-47
-Goloma | 1.5% | 48
-Grippli | 6% | 49-54
-Halfling | 6% | 55-60
-Hobgoblin | 1.5% | 61
-Human | 15% | 62-76
-Kashrishi | 0.5% | 00, d20=15-20
-Kitsune | 1% | 77
-Kobolds | 1.5% | 78-79
-Leshy | 2.5% | 80-82
-Lizardfolk | 1.5% | 83
-Nagaji | 2.5% | 84-85
-Orcs | 1.1% | 86
-Poppet | 1.1% | 87
-Ratfolk | 3.5% | 88-90
-Shisk | 1.1% | 91
-Shoomy | 1.5% | 92
-Skeleton | 1.1% | 93
-Sprite | 2.5% | 94-95
-Strix | 1.5% | 96
-Tengu | 1.5% | 97
-Vanara | 1.5% | 98
-Vishkanya | 1% | 99
+
+        Ancestry | Percentage | d100 roll
+        --- | :---: | :---:
+        Android | < 0.1% | 00, d20=1
+        Automation | < 0.1% | 00, d20=2
+        Azarketi | 2% | 01-02
+        Catfolk | 5% | 03-07
+        Conrasu | <0.1% | 00, d20=3
+        Dwarf | 20% | 08-27
+        Elf | 10% | 28-37
+        Fetchling | 2% | 38-39
+        Fleshwarp | 0.3% | 00, d20=4-7
+        Ghorian | 0.5% | 00, d20=8-14
+        Gnoll | 3.5% | 40-43
+        Gnome | 2.5% | 44-45
+        Goblin | 1.5% | 46-47
+        Goloma | 1.5% | 48
+        Grippli | 6% | 49-54
+        Halfling | 6% | 55-60
+        Hobgoblin | 1.5% | 61
+        Human | 15% | 62-76
+        Kashrishi | 0.5% | 00, d20=15-20
+        Kitsune | 1% | 77
+        Kobolds | 1.5% | 78-79
+        Leshy | 2.5% | 80-82
+        Lizardfolk | 1.5% | 83
+        Nagaji | 2.5% | 84-85
+        Orcs | 1.1% | 86
+        Poppet | 1.1% | 87
+        Ratfolk | 3.5% | 88-90
+        Shisk | 1.1% | 91
+        Shoomy | 1.5% | 92
+        Skeleton | 1.1% | 93
+        Sprite | 2.5% | 94-95
+        Strix | 1.5% | 96
+        Tengu | 1.5% | 97
+        Vanara | 1.5% | 98
+        Vishkanya | 1% | 99
         """
         table_rare = RandTable()
         table_rare.add_entry(Ancestry.ANDROID, 1)
@@ -165,13 +166,14 @@ class Heritage(Enum):
         table_versatile.add_entry(Heritage.SYLPH, 2)
         table_versatile.add_entry(Heritage.TALOS, 2)
         table_versatile.add_entry(Heritage.TIEFLING, 2)
-        
+
         table = RandTable()
         table.add_entry(Heritage.STANDARD, 55)
         table.add_entry(Heritage.HALF_ELF, 2)
         table.add_entry(Heritage.HALF_ORC, 2)
         table.add_entry(table_versatile, 41)
         return table.choose_random()
+
 
 # Vast simplification
 class Gender(Enum):
@@ -190,6 +192,7 @@ class Gender(Enum):
         table.add_entry(Gender.TRANSMASC, 100)
         table.add_entry(Gender.NONBIN, 50)
         return table.choose_random()
+
 
 # Vast simplification
 class Sexuality(Enum):
@@ -210,6 +213,7 @@ class Sexuality(Enum):
         table.add_entry(Sexuality.HOMO, 200)
         table.add_entry(Sexuality.HETRO, 500)
         return table.choose_random()
+
 
 class Ethnicity(Enum):
     # Based on https://www23.statcan.gc.ca/imdb/p3VD.pl?Function=getVD&TVD=1310929
@@ -296,7 +300,7 @@ class Ethnicity(Enum):
         final_table.add_entry(europe_table, 3625)
 
         return final_table.choose_random()
-        
+
 
 class Alignment(Enum):
     LG = "Lawful Good"
@@ -308,7 +312,7 @@ class Alignment(Enum):
     LE = "Lawful Evil"
     NE = "Neutral Evil"
     CE = "Chaotic Evil"
-    
+
     @staticmethod
     def choose_random():
         # currently equally likely
@@ -350,6 +354,7 @@ class CharacterClass(Enum):
         for x in list(CharacterClass):
             table.add_entry(x, 1)
         return table.choose_random()
+
 
 if __name__ == "__main__":
     print(Ancestry.choose_random().value)
